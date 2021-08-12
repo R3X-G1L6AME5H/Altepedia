@@ -1,0 +1,1463 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Assets/Fonts/TitleFont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Panels/SubScenes/Graph.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Panels/SubScenes/Map.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Fonts/TextFont.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Assets/Fonts/SourceCodePro-Bold.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Assets/Styles/SubPanel.tres" type="StyleBox" id=6]
+[ext_resource path="res://Assets/Styles/Transparent.tres" type="StyleBox" id=7]
+[ext_resource path="res://Assets/Styles/TitleSeparator.tres" type="StyleBox" id=8]
+[ext_resource path="res://Scripts/ExtraStatsControl.gd" type="Script" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+size = 12
+font_data = ExtResource( 5 )
+
+[node name="TABS" type="TabContainer"]
+anchor_left = 0.00103462
+anchor_right = 0.00103462
+margin_left = 341.0
+margin_right = 1004.0
+margin_bottom = 543.0
+grow_horizontal = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+custom_constants/side_margin = 0
+tab_align = 0
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Physical Profile" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+
+[node name="Overview" type="VBoxContainer" parent="Physical Profile"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 645.0
+margin_bottom = 497.0
+custom_constants/separation = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Physical Profile/Overview"]
+margin_right = 635.0
+margin_bottom = 312.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+
+[node name="TopStuff" type="HBoxContainer" parent="Physical Profile/Overview/VBoxContainer"]
+margin_right = 635.0
+margin_bottom = 228.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 6.0
+custom_constants/separation = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Physical Profile/Overview/VBoxContainer/TopStuff"]
+margin_right = 312.0
+margin_bottom = 228.0
+size_flags_horizontal = 3
+
+[node name="TITLE" type="HBoxContainer" parent="Physical Profile/Overview/VBoxContainer/TopStuff/VBoxContainer"]
+margin_right = 312.0
+margin_bottom = 16.0
+custom_constants/separation = 10
+
+[node name="HSeparator2" type="HSeparator" parent="Physical Profile/Overview/VBoxContainer/TopStuff/VBoxContainer/TITLE"]
+margin_right = 27.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+custom_styles/separator = ExtResource( 8 )
+
+[node name="DESCRIPTION" type="Label" parent="Physical Profile/Overview/VBoxContainer/TopStuff/VBoxContainer/TITLE"]
+margin_left = 37.0
+margin_right = 274.0
+margin_bottom = 16.0
+custom_fonts/font = ExtResource( 1 )
+text = "PHYSICAL CHARACTERISTICS"
+align = 1
+
+[node name="HSeparator" type="HSeparator" parent="Physical Profile/Overview/VBoxContainer/TopStuff/VBoxContainer/TITLE"]
+margin_left = 284.0
+margin_right = 312.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+custom_styles/separator = ExtResource( 8 )
+
+[node name="Characteristics" type="TextEdit" parent="Physical Profile/Overview/VBoxContainer/TopStuff/VBoxContainer"]
+margin_top = 20.0
+margin_right = 312.0
+margin_bottom = 228.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+fold_gutter = true
+wrap_enabled = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Physical Profile/Overview/VBoxContainer/TopStuff"]
+margin_left = 322.0
+margin_right = 635.0
+margin_bottom = 228.0
+size_flags_horizontal = 3
+
+[node name="TITLE2" type="HBoxContainer" parent="Physical Profile/Overview/VBoxContainer/TopStuff/VBoxContainer2"]
+margin_right = 313.0
+margin_bottom = 16.0
+custom_constants/separation = 10
+
+[node name="HSeparator2" type="HSeparator" parent="Physical Profile/Overview/VBoxContainer/TopStuff/VBoxContainer2/TITLE2"]
+margin_right = 114.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+custom_styles/separator = ExtResource( 8 )
+
+[node name="DESCRIPTION" type="Label" parent="Physical Profile/Overview/VBoxContainer/TopStuff/VBoxContainer2/TITLE2"]
+margin_left = 124.0
+margin_right = 188.0
+margin_bottom = 16.0
+custom_fonts/font = ExtResource( 1 )
+text = "SENSES"
+align = 1
+
+[node name="HSeparator" type="HSeparator" parent="Physical Profile/Overview/VBoxContainer/TopStuff/VBoxContainer2/TITLE2"]
+margin_left = 198.0
+margin_right = 313.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+custom_styles/separator = ExtResource( 8 )
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Physical Profile/Overview/VBoxContainer/TopStuff/VBoxContainer2"]
+margin_top = 20.0
+margin_right = 313.0
+margin_bottom = 228.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="RadarChart" parent="Physical Profile/Overview/VBoxContainer/TopStuff/VBoxContainer2/AspectRatioContainer" instance=ExtResource( 2 )]
+margin_left = 52.5
+margin_right = 260.5
+margin_bottom = 208.0
+size_flags_vertical = 3
+base_color = Color( 0.0666667, 0.0392157, 0.0392157, 1 )
+grid_color = Color( 0.95, 0.95, 0.95, 1 )
+graph_color = Color( 0.760784, 0.403922, 0.184314, 1 )
+
+[node name="BottomStuff" type="HBoxContainer" parent="Physical Profile/Overview/VBoxContainer"]
+margin_top = 232.0
+margin_right = 635.0
+margin_bottom = 312.0
+size_flags_vertical = 3
+custom_constants/separation = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Physical Profile/Overview/VBoxContainer/BottomStuff"]
+margin_right = 312.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+custom_constants/separation = 5
+
+[node name="Misc" type="HBoxContainer" parent="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer"]
+margin_right = 312.0
+margin_bottom = 80.0
+size_flags_vertical = 3
+
+[node name="Lables" type="VBoxContainer" parent="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer/Misc"]
+margin_right = 154.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer/Misc/Lables"]
+margin_top = 5.0
+margin_right = 154.0
+margin_bottom = 19.0
+size_flags_vertical = 6
+
+[node name="Label" type="Label" parent="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer/Misc/Lables/HBoxContainer3"]
+margin_right = 75.0
+margin_bottom = 14.0
+hint_tooltip = "A great spot that does extra dameage when touched violently.
+This does not reffer to general weakspots like tendons, eyes, 
+head, neck, and the sort. It reffers to that one characteristic 
+weakness that it will be remembered for.
+
+Exp. Cyclops eye, Achilies heel, etc."
+mouse_filter = 1
+size_flags_horizontal = 3
+text = "Weakness"
+
+[node name="HSeparator" type="HSeparator" parent="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer/Misc/Lables/HBoxContainer3"]
+margin_left = 79.0
+margin_right = 154.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer/Misc/Lables"]
+margin_top = 33.0
+margin_right = 154.0
+margin_bottom = 47.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+
+[node name="Label2" type="Label" parent="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer/Misc/Lables/HBoxContainer2"]
+margin_right = 75.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Height(m)"
+valign = 1
+
+[node name="HSeparator2" type="HSeparator" parent="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer/Misc/Lables/HBoxContainer2"]
+margin_left = 79.0
+margin_right = 154.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer/Misc/Lables"]
+margin_top = 61.0
+margin_right = 154.0
+margin_bottom = 75.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+
+[node name="Label" type="Label" parent="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer/Misc/Lables/HBoxContainer"]
+margin_right = 75.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Weight(Kg)"
+valign = 1
+
+[node name="HSeparator" type="HSeparator" parent="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer/Misc/Lables/HBoxContainer"]
+margin_left = 79.0
+margin_right = 154.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+
+[node name="Data" type="VBoxContainer" parent="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer/Misc"]
+margin_left = 158.0
+margin_right = 312.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+
+[node name="LineEdit" type="LineEdit" parent="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer/Misc/Data"]
+margin_right = 154.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+placeholder_text = "Weak Spot"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer/Misc/Data"]
+margin_top = 28.0
+margin_right = 154.0
+margin_bottom = 52.0
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Min" type="LineEdit" parent="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer/Misc/Data/HBoxContainer2"]
+margin_right = 70.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+align = 1
+placeholder_text = "min"
+
+[node name="Separator" type="Label" parent="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer/Misc/Data/HBoxContainer2"]
+margin_left = 74.0
+margin_top = 5.0
+margin_right = 79.0
+margin_bottom = 19.0
+text = "-"
+align = 1
+valign = 1
+
+[node name="Max" type="LineEdit" parent="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer/Misc/Data/HBoxContainer2"]
+margin_left = 83.0
+margin_right = 154.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+align = 1
+placeholder_text = "max"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer/Misc/Data"]
+margin_top = 56.0
+margin_right = 154.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Min" type="LineEdit" parent="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer/Misc/Data/HBoxContainer"]
+margin_right = 70.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+align = 1
+placeholder_text = "min"
+
+[node name="Separator" type="Label" parent="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer/Misc/Data/HBoxContainer"]
+margin_left = 74.0
+margin_top = 5.0
+margin_right = 79.0
+margin_bottom = 19.0
+text = "-"
+align = 1
+valign = 1
+
+[node name="Max" type="LineEdit" parent="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer/Misc/Data/HBoxContainer"]
+margin_left = 83.0
+margin_right = 154.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+align = 1
+placeholder_text = "max"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Physical Profile/Overview/VBoxContainer/BottomStuff"]
+margin_left = 322.0
+margin_right = 635.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer2"]
+margin_right = 313.0
+margin_bottom = 80.0
+size_flags_vertical = 3
+custom_constants/separation = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer2/HBoxContainer"]
+margin_right = 94.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+custom_constants/separation = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer2/HBoxContainer/VBoxContainer"]
+margin_right = 94.0
+margin_bottom = 23.0
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer2/HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_top = 4.0
+margin_right = 45.0
+margin_bottom = 18.0
+hint_tooltip = "The overall visual capabilities of the altemon. A score of C would be
+something like normal vision. Anything below is blurry and clouded
+and anything above has the capability to zoom in and see things 
+from far away. Keep in mind that these affect the players screen 
+directly.
+
+To recap: F is mole sight, C is a human sight, S is eagle sight."
+mouse_filter = 1
+size_flags_horizontal = 3
+text = "Sight"
+
+[node name="HSeparator" type="HSeparator" parent="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer2/HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_left = 49.0
+margin_right = 94.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer2/HBoxContainer/VBoxContainer"]
+margin_top = 28.0
+margin_right = 94.0
+margin_bottom = 51.0
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer2/HBoxContainer/VBoxContainer/HBoxContainer4"]
+margin_top = 4.0
+margin_right = 45.0
+margin_bottom = 18.0
+hint_tooltip = "Instinct is a difficult one to explain. Think of little deus-ex-machinas.
+You are about to get hit, but your altemon moves on its own to evade.
+You are walking near the forrest and your altemon suddenly jumps 
+out because there is a Mephisto(Sinhorn) stalking you. That kinda thing.
+F means no devine intervention.
+B means a few.
+S means that you cannot get hit... as long as you have stamina to 
+cover it. (This stat could be a double edged sword, me thinks >:) )
+"
+mouse_filter = 1
+size_flags_horizontal = 3
+text = "Instict"
+
+[node name="HSeparator5" type="HSeparator" parent="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer2/HBoxContainer/VBoxContainer/HBoxContainer4"]
+margin_left = 49.0
+margin_right = 94.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer2/HBoxContainer/VBoxContainer"]
+margin_top = 56.0
+margin_right = 94.0
+margin_bottom = 80.0
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer2/HBoxContainer/VBoxContainer/HBoxContainer5"]
+margin_top = 5.0
+margin_right = 63.0
+margin_bottom = 19.0
+hint_tooltip = "This one we'll have to decide on, later. It could be limited
+to only sensing spiritual activity, but could as easily cover
+some specific extra senses, like electricity, magnetism, or
+weather detection. "
+mouse_filter = 1
+size_flags_horizontal = 3
+text = "6th Sense"
+
+[node name="HSeparator6" type="HSeparator" parent="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer2/HBoxContainer/VBoxContainer/HBoxContainer5"]
+margin_left = 67.0
+margin_right = 94.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+
+[node name="Data" type="VBoxContainer" parent="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer2/HBoxContainer"]
+margin_left = 104.0
+margin_right = 151.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+
+[node name="VIS" type="OptionButton" parent="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer2/HBoxContainer/Data"]
+margin_right = 47.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "S"
+align = 1
+items = [ "F", null, false, 0, null, "E", null, false, 1, null, "D", null, false, 2, null, "C", null, false, 3, null, "B", null, false, 4, null, "A", null, false, 5, null, "S", null, false, 6, null ]
+selected = 6
+
+[node name="6TH" type="OptionButton" parent="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer2/HBoxContainer/Data"]
+margin_top = 28.0
+margin_right = 47.0
+margin_bottom = 52.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "S"
+align = 1
+items = [ "F", null, false, 0, null, "E", null, false, 1, null, "D", null, false, 2, null, "C", null, false, 3, null, "B", null, false, 4, null, "A", null, false, 5, null, "S", null, false, 6, null ]
+selected = 6
+
+[node name="INS" type="OptionButton" parent="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer2/HBoxContainer/Data"]
+margin_top = 56.0
+margin_right = 47.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "S"
+align = 1
+items = [ "F", null, false, 0, null, "E", null, false, 1, null, "D", null, false, 2, null, "C", null, false, 3, null, "B", null, false, 4, null, "A", null, false, 5, null, "S", null, false, 6, null ]
+selected = 6
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer2/HBoxContainer"]
+margin_left = 161.0
+margin_right = 255.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+custom_constants/separation = 5
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer2/HBoxContainer/VBoxContainer2"]
+margin_right = 94.0
+margin_bottom = 23.0
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer2/HBoxContainer/VBoxContainer2/HBoxContainer2"]
+margin_top = 4.0
+margin_right = 49.0
+margin_bottom = 18.0
+hint_tooltip = "In game, this will control the loudness of soundeffects.
+F means completely deaf. B is normal human hearing, 
+with everything below it being muffled. And B+ turns 
+into straight out echo-location, or radar location."
+mouse_filter = 1
+size_flags_horizontal = 3
+text = "Hearing"
+
+[node name="HSeparator2" type="HSeparator" parent="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer2/HBoxContainer/VBoxContainer2/HBoxContainer2"]
+margin_left = 53.0
+margin_right = 94.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer2/HBoxContainer/VBoxContainer2"]
+margin_top = 28.0
+margin_right = 94.0
+margin_bottom = 51.0
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer2/HBoxContainer/VBoxContainer2/HBoxContainer3"]
+margin_top = 4.0
+margin_right = 45.0
+margin_bottom = 18.0
+hint_tooltip = "This will be useful during exploration, as it will highlight certain things by smell. 
+Imagine a mission with a neighbourgh stealing man's plants and you have to
+literally snoop them out by entering their farm and smelling if any of his sickles 
+smells of freshly cut plants, or better yet, sensing the smell of plants from the
+hidden basement. The score relates to accuracy of the sense. F means no sense.
+B means you will be able to see clouds emitted by certain items but the clouds
+will be so big that, if the item isn't in a clearing, it will blend too much with 
+other smells. S means no clouds, just the highlights."
+mouse_filter = 1
+size_flags_horizontal = 3
+text = "Smell"
+
+[node name="HSeparator3" type="HSeparator" parent="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer2/HBoxContainer/VBoxContainer2/HBoxContainer3"]
+margin_left = 49.0
+margin_right = 94.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer2/HBoxContainer/VBoxContainer2"]
+margin_top = 56.0
+margin_right = 94.0
+margin_bottom = 80.0
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer2/HBoxContainer/VBoxContainer2/HBoxContainer"]
+margin_top = 5.0
+margin_right = 71.0
+margin_bottom = 19.0
+hint_tooltip = "When adjusting this, remember Toph Beifong and
+the way she sees the world. That is the way I want
+this stat to affect the game. The scores are 
+corelated to the radius of effect.
+F - no radius
+B - 10 meters
+S - ~100 meters"
+mouse_filter = 1
+size_flags_horizontal = 3
+text = "Kinestetics"
+
+[node name="HSeparator4" type="HSeparator" parent="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer2/HBoxContainer/VBoxContainer2/HBoxContainer"]
+margin_left = 75.0
+margin_right = 94.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+
+[node name="Data2" type="VBoxContainer" parent="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer2/HBoxContainer"]
+margin_left = 265.0
+margin_right = 313.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+
+[node name="AUD" type="OptionButton" parent="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer2/HBoxContainer/Data2"]
+margin_right = 48.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "S"
+align = 1
+items = [ "F", null, false, 0, null, "E", null, false, 1, null, "D", null, false, 2, null, "C", null, false, 3, null, "B", null, false, 4, null, "A", null, false, 5, null, "S", null, false, 6, null ]
+selected = 6
+
+[node name="OLF" type="OptionButton" parent="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer2/HBoxContainer/Data2"]
+margin_top = 28.0
+margin_right = 48.0
+margin_bottom = 52.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "S"
+align = 1
+items = [ "F", null, false, 0, null, "E", null, false, 1, null, "D", null, false, 2, null, "C", null, false, 3, null, "B", null, false, 4, null, "A", null, false, 5, null, "S", null, false, 6, null ]
+selected = 6
+
+[node name="KIN" type="OptionButton" parent="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer2/HBoxContainer/Data2"]
+margin_top = 56.0
+margin_right = 48.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "S"
+align = 1
+items = [ "F", null, false, 0, null, "E", null, false, 1, null, "D", null, false, 2, null, "C", null, false, 3, null, "B", null, false, 4, null, "A", null, false, 5, null, "S", null, false, 6, null ]
+selected = 6
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Physical Profile/Overview"]
+margin_top = 327.0
+margin_right = 635.0
+margin_bottom = 487.0
+custom_constants/separation = 10
+
+[node name="CAPABILITIES" type="VBoxContainer" parent="Physical Profile/Overview/HBoxContainer"]
+margin_right = 312.0
+margin_bottom = 160.0
+size_flags_horizontal = 3
+
+[node name="TITLE2" type="HBoxContainer" parent="Physical Profile/Overview/HBoxContainer/CAPABILITIES"]
+margin_right = 312.0
+margin_bottom = 16.0
+custom_constants/separation = 10
+
+[node name="HSeparator2" type="HSeparator" parent="Physical Profile/Overview/HBoxContainer/CAPABILITIES/TITLE2"]
+margin_right = 89.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+custom_styles/separator = ExtResource( 8 )
+
+[node name="DESCRIPTION" type="Label" parent="Physical Profile/Overview/HBoxContainer/CAPABILITIES/TITLE2"]
+margin_left = 99.0
+margin_right = 212.0
+margin_bottom = 16.0
+custom_fonts/font = ExtResource( 1 )
+text = "CAPABILITIES"
+align = 1
+
+[node name="HSeparator" type="HSeparator" parent="Physical Profile/Overview/HBoxContainer/CAPABILITIES/TITLE2"]
+margin_left = 222.0
+margin_right = 312.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+custom_styles/separator = ExtResource( 8 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Physical Profile/Overview/HBoxContainer/CAPABILITIES"]
+margin_top = 20.0
+margin_right = 312.0
+margin_bottom = 52.0
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Physical Profile/Overview/HBoxContainer/CAPABILITIES/HBoxContainer"]
+margin_right = 244.0
+margin_bottom = 32.0
+size_flags_horizontal = 3
+custom_constants/separation = 5
+
+[node name="CheckBox" type="Label" parent="Physical Profile/Overview/HBoxContainer/CAPABILITIES/HBoxContainer/HBoxContainer"]
+margin_right = 89.0
+margin_bottom = 32.0
+size_flags_vertical = 3
+text = "Flight Capable"
+valign = 1
+
+[node name="HSeparator" type="HSeparator" parent="Physical Profile/Overview/HBoxContainer/CAPABILITIES/HBoxContainer/HBoxContainer"]
+margin_left = 94.0
+margin_right = 244.0
+margin_bottom = 32.0
+size_flags_horizontal = 3
+
+[node name="CheckButton" type="CheckButton" parent="Physical Profile/Overview/HBoxContainer/CAPABILITIES/HBoxContainer"]
+margin_left = 248.0
+margin_right = 312.0
+margin_bottom = 32.0
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/focus = ExtResource( 7 )
+custom_styles/disabled = ExtResource( 7 )
+custom_styles/hover_pressed = ExtResource( 7 )
+custom_styles/normal = ExtResource( 7 )
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Physical Profile/Overview/HBoxContainer/CAPABILITIES"]
+margin_top = 56.0
+margin_right = 312.0
+margin_bottom = 88.0
+size_flags_vertical = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Physical Profile/Overview/HBoxContainer/CAPABILITIES/HBoxContainer2"]
+margin_right = 244.0
+margin_bottom = 32.0
+size_flags_horizontal = 3
+custom_constants/separation = 5
+
+[node name="Label2" type="Label" parent="Physical Profile/Overview/HBoxContainer/CAPABILITIES/HBoxContainer2/HBoxContainer2"]
+margin_right = 82.0
+margin_bottom = 32.0
+size_flags_vertical = 3
+text = "Ride Capable"
+valign = 1
+
+[node name="HSeparator" type="HSeparator" parent="Physical Profile/Overview/HBoxContainer/CAPABILITIES/HBoxContainer2/HBoxContainer2"]
+margin_left = 87.0
+margin_right = 244.0
+margin_bottom = 32.0
+size_flags_horizontal = 3
+
+[node name="CheckButton2" type="CheckButton" parent="Physical Profile/Overview/HBoxContainer/CAPABILITIES/HBoxContainer2"]
+margin_left = 248.0
+margin_right = 312.0
+margin_bottom = 32.0
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/focus = ExtResource( 7 )
+custom_styles/disabled = ExtResource( 7 )
+custom_styles/hover_pressed = ExtResource( 7 )
+custom_styles/normal = ExtResource( 7 )
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Physical Profile/Overview/HBoxContainer/CAPABILITIES"]
+margin_top = 92.0
+margin_right = 312.0
+margin_bottom = 124.0
+size_flags_vertical = 3
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Physical Profile/Overview/HBoxContainer/CAPABILITIES/HBoxContainer3"]
+margin_right = 244.0
+margin_bottom = 32.0
+size_flags_horizontal = 3
+custom_constants/separation = 5
+
+[node name="Label3" type="Label" parent="Physical Profile/Overview/HBoxContainer/CAPABILITIES/HBoxContainer3/HBoxContainer3"]
+margin_right = 88.0
+margin_bottom = 32.0
+size_flags_vertical = 3
+text = "Swim Capable"
+valign = 1
+
+[node name="HSeparator" type="HSeparator" parent="Physical Profile/Overview/HBoxContainer/CAPABILITIES/HBoxContainer3/HBoxContainer3"]
+margin_left = 93.0
+margin_right = 244.0
+margin_bottom = 32.0
+size_flags_horizontal = 3
+
+[node name="CheckButton3" type="CheckButton" parent="Physical Profile/Overview/HBoxContainer/CAPABILITIES/HBoxContainer3"]
+margin_left = 248.0
+margin_right = 312.0
+margin_bottom = 32.0
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/focus = ExtResource( 7 )
+custom_styles/disabled = ExtResource( 7 )
+custom_styles/hover_pressed = ExtResource( 7 )
+custom_styles/normal = ExtResource( 7 )
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Physical Profile/Overview/HBoxContainer/CAPABILITIES"]
+margin_top = 128.0
+margin_right = 312.0
+margin_bottom = 160.0
+size_flags_vertical = 3
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Physical Profile/Overview/HBoxContainer/CAPABILITIES/HBoxContainer4"]
+margin_right = 244.0
+margin_bottom = 32.0
+size_flags_horizontal = 3
+custom_constants/separation = 5
+
+[node name="Label4" type="Label" parent="Physical Profile/Overview/HBoxContainer/CAPABILITIES/HBoxContainer4/HBoxContainer4"]
+margin_right = 83.0
+margin_bottom = 32.0
+size_flags_vertical = 3
+text = "Dive Capable"
+valign = 1
+
+[node name="HSeparator" type="HSeparator" parent="Physical Profile/Overview/HBoxContainer/CAPABILITIES/HBoxContainer4/HBoxContainer4"]
+margin_left = 88.0
+margin_right = 244.0
+margin_bottom = 32.0
+size_flags_horizontal = 3
+
+[node name="CheckButton4" type="CheckButton" parent="Physical Profile/Overview/HBoxContainer/CAPABILITIES/HBoxContainer4"]
+margin_left = 248.0
+margin_right = 312.0
+margin_bottom = 32.0
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/focus = ExtResource( 7 )
+custom_styles/disabled = ExtResource( 7 )
+custom_styles/hover_pressed = ExtResource( 7 )
+custom_styles/normal = ExtResource( 7 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Physical Profile/Overview/HBoxContainer"]
+margin_left = 322.0
+margin_right = 635.0
+margin_bottom = 160.0
+size_flags_horizontal = 3
+
+[node name="TITLE3" type="HBoxContainer" parent="Physical Profile/Overview/HBoxContainer/VBoxContainer"]
+margin_right = 313.0
+margin_bottom = 16.0
+custom_constants/separation = 10
+
+[node name="HSeparator2" type="HSeparator" parent="Physical Profile/Overview/HBoxContainer/VBoxContainer/TITLE3"]
+margin_right = 113.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+custom_styles/separator = ExtResource( 8 )
+
+[node name="DESCRIPTION" type="Label" parent="Physical Profile/Overview/HBoxContainer/VBoxContainer/TITLE3"]
+margin_left = 123.0
+margin_right = 189.0
+margin_bottom = 16.0
+custom_fonts/font = ExtResource( 1 )
+text = "COLORS"
+align = 1
+
+[node name="HSeparator" type="HSeparator" parent="Physical Profile/Overview/HBoxContainer/VBoxContainer/TITLE3"]
+margin_left = 199.0
+margin_right = 313.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+custom_styles/separator = ExtResource( 8 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Physical Profile/Overview/HBoxContainer/VBoxContainer"]
+margin_top = 20.0
+margin_right = 313.0
+margin_bottom = 160.0
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Physical Profile/Overview/HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_right = 206.0
+margin_bottom = 140.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="Label5" type="Label" parent="Physical Profile/Overview/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 9.0
+margin_right = 206.0
+margin_bottom = 23.0
+hint_tooltip = "Takes over the most area. Typically the 
+color on the altemon's back, or on it's
+entire torso."
+mouse_filter = 1
+size_flags_vertical = 6
+text = "Primary Color"
+
+[node name="Label6" type="Label" parent="Physical Profile/Overview/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 45.0
+margin_right = 206.0
+margin_bottom = 59.0
+hint_tooltip = "Covers close to or less area than the primary color. 
+Typically the color of the quadruped's belly, or legs
+in a biped. "
+mouse_filter = 1
+size_flags_vertical = 6
+text = "Secondary Color"
+
+[node name="Label8" type="Label" parent="Physical Profile/Overview/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 81.0
+margin_right = 206.0
+margin_bottom = 95.0
+hint_tooltip = "Covers consederably less area than the
+primary color, but is still quite noticable. 
+Typically the color of the tail, birds legs,
+face mask, pattern on the back, etc."
+mouse_filter = 1
+size_flags_vertical = 6
+text = "Terciary Color"
+
+[node name="Label7" type="Label" parent="Physical Profile/Overview/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 117.0
+margin_right = 206.0
+margin_bottom = 131.0
+hint_tooltip = "The color of details: the tip of a feather, 
+ear, fang, claw, beak, etc."
+mouse_filter = 1
+size_flags_vertical = 6
+text = "Accent Color"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Physical Profile/Overview/HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_left = 210.0
+margin_right = 313.0
+margin_bottom = 140.0
+size_flags_horizontal = 3
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="Physical Profile/Overview/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+margin_right = 103.0
+margin_bottom = 32.0
+size_flags_vertical = 3
+color = Color( 1, 0.976471, 0.443137, 1 )
+
+[node name="ColorPickerButton2" type="ColorPickerButton" parent="Physical Profile/Overview/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+margin_top = 36.0
+margin_right = 103.0
+margin_bottom = 68.0
+size_flags_vertical = 3
+color = Color( 0.921569, 0.294118, 0.294118, 1 )
+
+[node name="ColorPickerButton3" type="ColorPickerButton" parent="Physical Profile/Overview/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+margin_top = 72.0
+margin_right = 103.0
+margin_bottom = 104.0
+size_flags_vertical = 3
+color = Color( 0.305882, 0.301961, 0.976471, 1 )
+
+[node name="ColorPickerButton4" type="ColorPickerButton" parent="Physical Profile/Overview/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+margin_top = 108.0
+margin_right = 103.0
+margin_bottom = 140.0
+size_flags_vertical = 3
+color = Color( 0.180392, 0.180392, 0.180392, 1 )
+
+[node name="Mental Profile" type="MarginContainer" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+
+[node name="Capture Data" type="VBoxContainer" parent="Mental Profile"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 645.0
+margin_bottom = 497.0
+custom_constants/separation = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Mental Profile/Capture Data"]
+margin_right = 635.0
+margin_bottom = 136.0
+
+[node name="TITLE" type="HBoxContainer" parent="Mental Profile/Capture Data/VBoxContainer"]
+margin_right = 635.0
+margin_bottom = 16.0
+custom_constants/separation = 10
+
+[node name="HSeparator2" type="HSeparator" parent="Mental Profile/Capture Data/VBoxContainer/TITLE"]
+margin_right = 219.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+custom_styles/separator = ExtResource( 8 )
+
+[node name="DESCRIPTION" type="Label" parent="Mental Profile/Capture Data/VBoxContainer/TITLE"]
+margin_left = 229.0
+margin_right = 406.0
+margin_bottom = 16.0
+custom_fonts/font = ExtResource( 1 )
+text = "PERSONALTY MARTIX"
+align = 1
+
+[node name="HSeparator" type="HSeparator" parent="Mental Profile/Capture Data/VBoxContainer/TITLE"]
+margin_left = 416.0
+margin_right = 635.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+custom_styles/separator = ExtResource( 8 )
+
+[node name="PersonalityMatrix" type="HBoxContainer" parent="Mental Profile/Capture Data/VBoxContainer"]
+margin_top = 20.0
+margin_right = 635.0
+margin_bottom = 136.0
+
+[node name="Inverses" type="VBoxContainer" parent="Mental Profile/Capture Data/VBoxContainer/PersonalityMatrix"]
+margin_right = 125.0
+margin_bottom = 116.0
+size_flags_horizontal = 3
+
+[node name="Label12" type="Label" parent="Mental Profile/Capture Data/VBoxContainer/PersonalityMatrix/Inverses"]
+margin_right = 125.0
+margin_bottom = 16.0
+hint_tooltip = "Down-to-earth
+Uncreative
+Conventional
+Uncurious"
+mouse_filter = 1
+custom_fonts/font = ExtResource( 1 )
+text = "Settled"
+align = 1
+
+[node name="Label11" type="Label" parent="Mental Profile/Capture Data/VBoxContainer/PersonalityMatrix/Inverses"]
+margin_top = 20.0
+margin_right = 125.0
+margin_bottom = 36.0
+hint_tooltip = "Negligent
+Lazy
+Disorganized
+Late"
+mouse_filter = 1
+custom_fonts/font = ExtResource( 1 )
+text = "Care-free"
+align = 1
+
+[node name="Label10" type="Label" parent="Mental Profile/Capture Data/VBoxContainer/PersonalityMatrix/Inverses"]
+margin_top = 40.0
+margin_right = 125.0
+margin_bottom = 56.0
+hint_tooltip = "Loner
+Quiet
+Passive
+Reserved"
+mouse_filter = 1
+custom_fonts/font = ExtResource( 1 )
+text = "Introverted"
+align = 1
+
+[node name="Label8" type="Label" parent="Mental Profile/Capture Data/VBoxContainer/PersonalityMatrix/Inverses"]
+margin_top = 60.0
+margin_right = 125.0
+margin_bottom = 76.0
+hint_tooltip = "Suspicious
+Critical
+Ruthless
+Irritable"
+mouse_filter = 1
+custom_fonts/font = ExtResource( 1 )
+text = "Disagreeable"
+align = 1
+
+[node name="Label7" type="Label" parent="Mental Profile/Capture Data/VBoxContainer/PersonalityMatrix/Inverses"]
+margin_top = 80.0
+margin_right = 125.0
+margin_bottom = 96.0
+hint_tooltip = "Calm
+Even-Tempered
+Comfortable
+Unemotional"
+mouse_filter = 1
+custom_fonts/font = ExtResource( 1 )
+text = "Composed"
+align = 1
+
+[node name="Label13" type="Label" parent="Mental Profile/Capture Data/VBoxContainer/PersonalityMatrix/Inverses"]
+margin_top = 100.0
+margin_right = 125.0
+margin_bottom = 116.0
+hint_tooltip = "Deceptive
+Manipulative
+Cunning"
+mouse_filter = 1
+custom_fonts/font = ExtResource( 1 )
+text = "Cunning"
+align = 1
+
+[node name="PB" type="VBoxContainer" parent="Mental Profile/Capture Data/VBoxContainer/PersonalityMatrix"]
+margin_left = 129.0
+margin_right = 505.0
+margin_bottom = 116.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+
+[node name="O" type="HSlider" parent="Mental Profile/Capture Data/VBoxContainer/PersonalityMatrix/PB"]
+margin_right = 376.0
+margin_bottom = 16.0
+max_value = 3.0
+tick_count = 4
+ticks_on_borders = true
+
+[node name="C" type="HSlider" parent="Mental Profile/Capture Data/VBoxContainer/PersonalityMatrix/PB"]
+margin_top = 20.0
+margin_right = 376.0
+margin_bottom = 36.0
+max_value = 3.0
+tick_count = 4
+ticks_on_borders = true
+
+[node name="E" type="HSlider" parent="Mental Profile/Capture Data/VBoxContainer/PersonalityMatrix/PB"]
+margin_top = 40.0
+margin_right = 376.0
+margin_bottom = 56.0
+max_value = 3.0
+tick_count = 4
+ticks_on_borders = true
+
+[node name="A" type="HSlider" parent="Mental Profile/Capture Data/VBoxContainer/PersonalityMatrix/PB"]
+margin_top = 60.0
+margin_right = 376.0
+margin_bottom = 76.0
+max_value = 3.0
+tick_count = 4
+ticks_on_borders = true
+
+[node name="N" type="HSlider" parent="Mental Profile/Capture Data/VBoxContainer/PersonalityMatrix/PB"]
+margin_top = 80.0
+margin_right = 376.0
+margin_bottom = 96.0
+max_value = 3.0
+tick_count = 4
+ticks_on_borders = true
+
+[node name="H" type="HSlider" parent="Mental Profile/Capture Data/VBoxContainer/PersonalityMatrix/PB"]
+margin_top = 100.0
+margin_right = 376.0
+margin_bottom = 116.0
+max_value = 3.0
+tick_count = 4
+ticks_on_borders = true
+
+[node name="Traits" type="VBoxContainer" parent="Mental Profile/Capture Data/VBoxContainer/PersonalityMatrix"]
+margin_left = 509.0
+margin_right = 635.0
+margin_bottom = 116.0
+size_flags_horizontal = 3
+
+[node name="Label12" type="Label" parent="Mental Profile/Capture Data/VBoxContainer/PersonalityMatrix/Traits"]
+margin_right = 126.0
+margin_bottom = 16.0
+hint_tooltip = "Imaginative
+Creative
+Original
+Curious"
+mouse_filter = 1
+custom_fonts/font = ExtResource( 1 )
+text = "Avanturistic"
+align = 1
+
+[node name="Label11" type="Label" parent="Mental Profile/Capture Data/VBoxContainer/PersonalityMatrix/Traits"]
+margin_top = 20.0
+margin_right = 126.0
+margin_bottom = 36.0
+hint_tooltip = "Conscientious
+Hard-working
+Well-organized
+Punctual"
+mouse_filter = 1
+custom_fonts/font = ExtResource( 1 )
+text = "Consiencious"
+align = 1
+
+[node name="Label10" type="Label" parent="Mental Profile/Capture Data/VBoxContainer/PersonalityMatrix/Traits"]
+margin_top = 40.0
+margin_right = 126.0
+margin_bottom = 56.0
+hint_tooltip = "Joiner
+Comunicative
+Active
+Affectionate"
+mouse_filter = 1
+custom_fonts/font = ExtResource( 1 )
+text = "Extraverted"
+align = 1
+
+[node name="Label8" type="Label" parent="Mental Profile/Capture Data/VBoxContainer/PersonalityMatrix/Traits"]
+margin_top = 60.0
+margin_right = 126.0
+margin_bottom = 76.0
+hint_tooltip = "Trusting
+Lenient
+Soft-hearted
+Good-natured"
+mouse_filter = 1
+custom_fonts/font = ExtResource( 1 )
+text = "Agreeable"
+align = 1
+
+[node name="Label7" type="Label" parent="Mental Profile/Capture Data/VBoxContainer/PersonalityMatrix/Traits"]
+margin_top = 80.0
+margin_right = 126.0
+margin_bottom = 96.0
+hint_tooltip = "Worried
+Temperamental
+Self-conscious
+Emotional"
+mouse_filter = 1
+custom_fonts/font = ExtResource( 1 )
+text = "Neurotic"
+align = 1
+
+[node name="Label13" type="Label" parent="Mental Profile/Capture Data/VBoxContainer/PersonalityMatrix/Traits"]
+margin_top = 100.0
+margin_right = 126.0
+margin_bottom = 116.0
+hint_tooltip = "Honest
+Well-meaning
+Naive"
+mouse_filter = 1
+custom_fonts/font = ExtResource( 1 )
+text = "Honest"
+align = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Mental Profile/Capture Data"]
+margin_top = 151.0
+margin_right = 635.0
+margin_bottom = 487.0
+size_flags_vertical = 3
+custom_constants/separation = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Mental Profile/Capture Data/HBoxContainer"]
+margin_right = 312.0
+margin_bottom = 336.0
+size_flags_horizontal = 3
+
+[node name="TITLE2" type="HBoxContainer" parent="Mental Profile/Capture Data/HBoxContainer/VBoxContainer"]
+margin_right = 312.0
+margin_bottom = 16.0
+custom_constants/separation = 10
+
+[node name="HSeparator2" type="HSeparator" parent="Mental Profile/Capture Data/HBoxContainer/VBoxContainer/TITLE2"]
+margin_right = 40.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+custom_styles/separator = ExtResource( 8 )
+
+[node name="DESCRIPTION" type="Label" parent="Mental Profile/Capture Data/HBoxContainer/VBoxContainer/TITLE2"]
+margin_left = 50.0
+margin_right = 262.0
+margin_bottom = 16.0
+custom_fonts/font = ExtResource( 1 )
+text = "Behaviour and Routine"
+align = 1
+uppercase = true
+
+[node name="HSeparator" type="HSeparator" parent="Mental Profile/Capture Data/HBoxContainer/VBoxContainer/TITLE2"]
+margin_left = 272.0
+margin_right = 312.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+custom_styles/separator = ExtResource( 8 )
+
+[node name="TextEdit" type="TextEdit" parent="Mental Profile/Capture Data/HBoxContainer/VBoxContainer"]
+margin_top = 20.0
+margin_right = 312.0
+margin_bottom = 336.0
+size_flags_vertical = 3
+fold_gutter = true
+wrap_enabled = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Mental Profile/Capture Data/HBoxContainer"]
+margin_left = 322.0
+margin_right = 635.0
+margin_bottom = 336.0
+size_flags_horizontal = 3
+
+[node name="TITLE3" type="HBoxContainer" parent="Mental Profile/Capture Data/HBoxContainer/VBoxContainer2"]
+margin_right = 313.0
+margin_bottom = 16.0
+custom_constants/separation = 10
+
+[node name="HSeparator2" type="HSeparator" parent="Mental Profile/Capture Data/HBoxContainer/VBoxContainer2/TITLE3"]
+margin_right = 126.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+custom_styles/separator = ExtResource( 8 )
+
+[node name="DESCRIPTION" type="Label" parent="Mental Profile/Capture Data/HBoxContainer/VBoxContainer2/TITLE3"]
+margin_left = 136.0
+margin_right = 176.0
+margin_bottom = 16.0
+hint_tooltip = "Is it a Herbivore, Omnivore, Carnivore, Ferrivore(Ferro lat. iron), or
+Terravore(Terra lat. Earth)? What is its preffered plant/pray/rock?
+Think of the conflicts it causes between the species. If you cannot
+think of a plant name, put dovn its unique attribute.
+Exp. The only flower that can bloom at the mountain's peak. The 
+red, sour, heart shaped fruit. Grape-like, viney plant that wraps 
+around other trees and emits mist."
+mouse_filter = 1
+custom_fonts/font = ExtResource( 1 )
+text = "DIET"
+align = 1
+
+[node name="HSeparator" type="HSeparator" parent="Mental Profile/Capture Data/HBoxContainer/VBoxContainer2/TITLE3"]
+margin_left = 186.0
+margin_right = 313.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+custom_styles/separator = ExtResource( 8 )
+
+[node name="TextEdit" type="TextEdit" parent="Mental Profile/Capture Data/HBoxContainer/VBoxContainer2"]
+margin_top = 20.0
+margin_right = 313.0
+margin_bottom = 73.0
+size_flags_vertical = 3
+fold_gutter = true
+wrap_enabled = true
+
+[node name="Fears" type="HBoxContainer" parent="Mental Profile/Capture Data/HBoxContainer/VBoxContainer2"]
+margin_top = 77.0
+margin_right = 313.0
+margin_bottom = 93.0
+custom_constants/separation = 10
+
+[node name="HSeparator2" type="HSeparator" parent="Mental Profile/Capture Data/HBoxContainer/VBoxContainer2/Fears"]
+margin_right = 120.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+custom_styles/separator = ExtResource( 8 )
+
+[node name="DESCRIPTION" type="Label" parent="Mental Profile/Capture Data/HBoxContainer/VBoxContainer2/Fears"]
+margin_left = 130.0
+margin_right = 183.0
+margin_bottom = 16.0
+hint_tooltip = "Is it things bigger than itself? Is it a certain
+pattern? A certain color? A certain altemon?
+Keep an eye on the personality matrix.
+A composed and disagreeable altemon will
+likely fight despite its fears... like a
+honeybadger."
+mouse_filter = 1
+custom_fonts/font = ExtResource( 1 )
+text = "FEARS"
+align = 1
+
+[node name="HSeparator" type="HSeparator" parent="Mental Profile/Capture Data/HBoxContainer/VBoxContainer2/Fears"]
+margin_left = 193.0
+margin_right = 313.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+custom_styles/separator = ExtResource( 8 )
+
+[node name="TextEdit2" type="TextEdit" parent="Mental Profile/Capture Data/HBoxContainer/VBoxContainer2"]
+margin_top = 97.0
+margin_right = 313.0
+margin_bottom = 151.0
+size_flags_vertical = 3
+fold_gutter = true
+wrap_enabled = true
+
+[node name="Fears2" type="HBoxContainer" parent="Mental Profile/Capture Data/HBoxContainer/VBoxContainer2"]
+margin_top = 155.0
+margin_right = 313.0
+margin_bottom = 171.0
+custom_constants/separation = 10
+
+[node name="HSeparator2" type="HSeparator" parent="Mental Profile/Capture Data/HBoxContainer/VBoxContainer2/Fears2"]
+margin_right = 54.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+custom_styles/separator = ExtResource( 8 )
+
+[node name="DESCRIPTION" type="Label" parent="Mental Profile/Capture Data/HBoxContainer/VBoxContainer2/Fears2"]
+margin_left = 64.0
+margin_right = 248.0
+margin_bottom = 16.0
+hint_tooltip = "The in-game observations we talked about. Marking its teritory with claw marks. 
+Drawing villagers into the woods at night. Disturbing childish laughter. Unnatural
+silence.
+Point is, pick some simple things which I can turn into scriptable events later.
+Things that will be the players introduction to this particular altemon's existance."
+mouse_filter = 1
+custom_fonts/font = ExtResource( 1 )
+text = "MARKS ON THE WORLD"
+align = 1
+
+[node name="HSeparator" type="HSeparator" parent="Mental Profile/Capture Data/HBoxContainer/VBoxContainer2/Fears2"]
+margin_left = 258.0
+margin_right = 313.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+custom_styles/separator = ExtResource( 8 )
+
+[node name="TextEdit3" type="TextEdit" parent="Mental Profile/Capture Data/HBoxContainer/VBoxContainer2"]
+margin_top = 175.0
+margin_right = 313.0
+margin_bottom = 336.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+fold_gutter = true
+wrap_enabled = true
+
+[node name="Special Abilities" type="MarginContainer" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Habitat" type="MarginContainer" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Habitat"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 645.0
+margin_bottom = 497.0
+size_flags_horizontal = 3
+
+[node name="TITLE" type="HBoxContainer" parent="Habitat/VBoxContainer"]
+margin_right = 635.0
+margin_bottom = 16.0
+custom_constants/separation = 10
+
+[node name="HSeparator2" type="HSeparator" parent="Habitat/VBoxContainer/TITLE"]
+margin_right = 256.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+custom_styles/separator = ExtResource( 8 )
+
+[node name="DESCRIPTION" type="Label" parent="Habitat/VBoxContainer/TITLE"]
+margin_left = 266.0
+margin_right = 368.0
+margin_bottom = 16.0
+custom_fonts/font = ExtResource( 1 )
+text = "LIVING AREA"
+align = 1
+
+[node name="HSeparator" type="HSeparator" parent="Habitat/VBoxContainer/TITLE"]
+margin_left = 378.0
+margin_right = 635.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+custom_styles/separator = ExtResource( 8 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Habitat/VBoxContainer"]
+margin_top = 20.0
+margin_right = 635.0
+margin_bottom = 487.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 10
+
+[node name="Map" parent="Habitat/VBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 426.0
+margin_bottom = 467.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.15
+
+[node name="Description" type="RichTextLabel" parent="Habitat/VBoxContainer/HBoxContainer"]
+margin_left = 436.0
+margin_right = 635.0
+margin_bottom = 467.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/focus = ExtResource( 6 )
+custom_styles/normal = ExtResource( 6 )
+custom_fonts/bold_font = SubResource( 1 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_constants/line_separation = 0
+bbcode_enabled = true
+scroll_active = false
+
+[connection signal="text_changed" from="Physical Profile/Overview/VBoxContainer/TopStuff/VBoxContainer/Characteristics" to="." method="_on_physical_characteristics_text_changed"]
+[connection signal="focus_exited" from="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer/Misc/Data/LineEdit" to="." method="_on_weakness_focus_exited"]
+[connection signal="focus_exited" from="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer/Misc/Data/HBoxContainer2/Min" to="." method="_on_height_min_focus_exited"]
+[connection signal="focus_exited" from="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer/Misc/Data/HBoxContainer2/Max" to="." method="_on_height_max_focus_exited"]
+[connection signal="focus_exited" from="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer/Misc/Data/HBoxContainer/Min" to="." method="_on_weight_min_focus_exited"]
+[connection signal="focus_exited" from="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer/Misc/Data/HBoxContainer/Max" to="." method="_on_weight_max_focus_exited"]
+[connection signal="item_selected" from="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer2/HBoxContainer/Data/VIS" to="Physical Profile/Overview/VBoxContainer/TopStuff/VBoxContainer2/AspectRatioContainer/RadarChart" method="_on_change_vis"]
+[connection signal="item_selected" from="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer2/HBoxContainer/Data/6TH" to="Physical Profile/Overview/VBoxContainer/TopStuff/VBoxContainer2/AspectRatioContainer/RadarChart" method="_on_change_6th"]
+[connection signal="item_selected" from="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer2/HBoxContainer/Data/INS" to="Physical Profile/Overview/VBoxContainer/TopStuff/VBoxContainer2/AspectRatioContainer/RadarChart" method="_on_change_ins"]
+[connection signal="item_selected" from="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer2/HBoxContainer/Data2/AUD" to="Physical Profile/Overview/VBoxContainer/TopStuff/VBoxContainer2/AspectRatioContainer/RadarChart" method="_on_change_aud"]
+[connection signal="item_selected" from="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer2/HBoxContainer/Data2/OLF" to="Physical Profile/Overview/VBoxContainer/TopStuff/VBoxContainer2/AspectRatioContainer/RadarChart" method="_on_change_olf"]
+[connection signal="item_selected" from="Physical Profile/Overview/VBoxContainer/BottomStuff/VBoxContainer2/HBoxContainer/Data2/KIN" to="Physical Profile/Overview/VBoxContainer/TopStuff/VBoxContainer2/AspectRatioContainer/RadarChart" method="_on_change_kin"]
+[connection signal="toggled" from="Physical Profile/Overview/HBoxContainer/CAPABILITIES/HBoxContainer/CheckButton" to="." method="_on_flyable_toggled"]
+[connection signal="toggled" from="Physical Profile/Overview/HBoxContainer/CAPABILITIES/HBoxContainer2/CheckButton2" to="." method="_on_ridable_toggled"]
+[connection signal="toggled" from="Physical Profile/Overview/HBoxContainer/CAPABILITIES/HBoxContainer3/CheckButton3" to="." method="_on_swimable_toggled"]
+[connection signal="toggled" from="Physical Profile/Overview/HBoxContainer/CAPABILITIES/HBoxContainer4/CheckButton4" to="." method="_on_divable_toggled"]
+[connection signal="popup_closed" from="Physical Profile/Overview/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2/ColorPickerButton" to="." method="_on_primary_popup_closed"]
+[connection signal="popup_closed" from="Physical Profile/Overview/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2/ColorPickerButton2" to="." method="_on_secondary_popup_closed"]
+[connection signal="popup_closed" from="Physical Profile/Overview/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2/ColorPickerButton3" to="." method="_on_terciary_popup_closed"]
+[connection signal="popup_closed" from="Physical Profile/Overview/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2/ColorPickerButton4" to="." method="_on_accent_popup_closed"]
+[connection signal="value_changed" from="Mental Profile/Capture Data/VBoxContainer/PersonalityMatrix/PB/O" to="." method="_on_O_value_changed"]
+[connection signal="value_changed" from="Mental Profile/Capture Data/VBoxContainer/PersonalityMatrix/PB/C" to="." method="_on_C_value_changed"]
+[connection signal="value_changed" from="Mental Profile/Capture Data/VBoxContainer/PersonalityMatrix/PB/E" to="." method="_on_E_value_changed"]
+[connection signal="value_changed" from="Mental Profile/Capture Data/VBoxContainer/PersonalityMatrix/PB/A" to="." method="_on_A_value_changed"]
+[connection signal="value_changed" from="Mental Profile/Capture Data/VBoxContainer/PersonalityMatrix/PB/N" to="." method="_on_N_value_changed"]
+[connection signal="value_changed" from="Mental Profile/Capture Data/VBoxContainer/PersonalityMatrix/PB/H" to="." method="_on_H_value_changed"]
+[connection signal="text_changed" from="Mental Profile/Capture Data/HBoxContainer/VBoxContainer/TextEdit" to="." method="_on_behaviour_text_changed"]
+[connection signal="text_changed" from="Mental Profile/Capture Data/HBoxContainer/VBoxContainer2/TextEdit" to="." method="_on_diet_text_changed"]
+[connection signal="text_changed" from="Mental Profile/Capture Data/HBoxContainer/VBoxContainer2/TextEdit2" to="." method="_on_fears_text_changed"]
+[connection signal="text_changed" from="Mental Profile/Capture Data/HBoxContainer/VBoxContainer2/TextEdit3" to="." method="_on_marks_text_changed"]
+[connection signal="area_chosen" from="Habitat/VBoxContainer/HBoxContainer/Map" to="." method="_on_Map_area_chosen"]

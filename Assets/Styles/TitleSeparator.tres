@@ -1,0 +1,5 @@
+[gd_resource type="StyleBoxLine" format=2]
+
+[resource]
+color = Color( 0.35, 0.225633, 0.2065, 1 )
+thickness = 2

@@ -1,0 +1,231 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/CartaMagnaNeat.jpg" type="Texture" id=1]
+[ext_resource path="res://Scripts/Map.gd" type="Script" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+
+[node name="Map" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MAP" type="Node2D" parent="."]
+position = Vector2( 512, 300 )
+scale = Vector2( 0.254237, 0.254237 )
+
+[node name="Sprite" type="Sprite" parent="MAP"]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 579, 124, 2356, 2356 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="HIGHLIGHT" type="Polygon2D" parent="MAP"]
+color = Color( 0.91, 0.79, 0.14, 0.24 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="HIGHLIGHT_BORDER" type="Line2D" parent="MAP"]
+points = PoolVector2Array( 1864.8, -161.514 )
+width = 15.0
+default_color = Color( 0.91, 0.79, 0.14, 0.41 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="SELECTION" type="Polygon2D" parent="MAP"]
+color = Color( 0.76, 0.4, 0.18, 0.5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="SELECTION_BORDER" type="Line2D" parent="MAP"]
+points = PoolVector2Array( 480.593, 536.487 )
+width = 15.0
+default_color = Color( 0.76, 0.4, 0.18, 0.85 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="0" type="Area2D" parent="MAP"]
+visible = false
+collision_layer = 16
+collision_mask = 16
+
+[node name="Collision" type="CollisionPolygon2D" parent="MAP/0"]
+position = Vector2( -849.6, -267.467 )
+polygon = PoolVector2Array( 62.9333, 409.067, 188.8, 251.733, 188.8, -346.133, 283.2, -534.933, 220.267, -597.867, -314.667, -377.6, -314.667, 94.4001 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="1" type="Area2D" parent="MAP"]
+collision_layer = 16
+collision_mask = 16
+
+[node name="Collision" type="CollisionPolygon2D" parent="MAP/1"]
+position = Vector2( -849.6, -267.467 )
+polygon = PoolVector2Array( -314.667, -377.6, 629.333, -755.2, 723.733, -881.066, -314.667, -881.066 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="2" type="Area2D" parent="MAP"]
+visible = false
+collision_layer = 16
+collision_mask = 16
+
+[node name="Collision" type="CollisionPolygon2D" parent="MAP/2"]
+position = Vector2( -849.6, -267.467 )
+polygon = PoolVector2Array( 723.733, -881.066, 1478.93, -881.066, 1227.2, -566.4, 629.333, -755.2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="3" type="Area2D" parent="MAP"]
+visible = false
+collision_layer = 16
+collision_mask = 16
+
+[node name="Collision" type="CollisionPolygon2D" parent="MAP/3"]
+position = Vector2( -849.6, -267.467 )
+polygon = PoolVector2Array( 188.8, -188.8, 377.6, -188.8, 660.8, -440.533, 944, -409.066, 1227.2, -566.4, 629.333, -755.2, 220.267, -597.866, 283.2, -534.933, 188.8, -346.133 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="4" type="Area2D" parent="MAP"]
+visible = false
+collision_layer = 16
+collision_mask = 16
+
+[node name="Collision" type="CollisionPolygon2D" parent="MAP/4"]
+position = Vector2( -849.6, -267.467 )
+polygon = PoolVector2Array( 377.6, -188.8, 660.8, -440.533, 944, -409.066, 975.467, -283.2, 1006.93, -157.333, 849.6, -31.4663, 818.133, -62.933, 566.4, -188.8, 534.933, -125.866 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="5" type="Area2D" parent="MAP"]
+visible = false
+collision_layer = 16
+collision_mask = 16
+
+[node name="Collision" type="CollisionPolygon2D" parent="MAP/5"]
+position = Vector2( -849.6, -267.467 )
+polygon = PoolVector2Array( 849.6, -31.4663, 1006.93, -157.333, 975.467, -283.2, 944, -409.066, 1227.2, -566.4, 1227.2, -440.533, 1384.53, -251.733, 1447.47, -94.3997, 1384.53, 62.9337, 1195.73, 125.867, 1227.2, 62.9337, 1164.27, 0.000305176, 1258.67, -62.933, 1195.73, -94.3997, 1164.27, -62.933, 1069.87, -62.933, 1038.4, -31.4663, 1101.33, 0.000305176, 1101.33, 94.4003, 1038.4, 94.4003, 881.067, 31.467 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="6" type="Area2D" parent="MAP"]
+visible = false
+collision_layer = 16
+collision_mask = 16
+
+[node name="Collision" type="CollisionPolygon2D" parent="MAP/6"]
+position = Vector2( -849.6, -267.467 )
+polygon = PoolVector2Array( 1384.53, -251.733, 1636.27, -314.666, 1730.67, -503.466, 1699.2, -660.8, 1825.07, -755.2, 1793.6, -881.066, 1478.93, -881.066, 1227.2, -566.4, 1227.2, -440.533 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="7" type="Area2D" parent="MAP"]
+visible = false
+collision_layer = 16
+collision_mask = 16
+
+[node name="Collision" type="CollisionPolygon2D" parent="MAP/7"]
+position = Vector2( -849.6, -267.467 )
+polygon = PoolVector2Array( 1793.6, -881.066, 2013.87, -881.066, 2013.87, -188.8, 1856.53, -157.333, 1384.53, -251.733, 1636.27, -314.666, 1730.67, -503.466, 1699.2, -660.8, 1825.07, -755.2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="8" type="Area2D" parent="MAP"]
+visible = false
+collision_layer = 16
+collision_mask = 16
+
+[node name="Collision" type="CollisionPolygon2D" parent="MAP/8"]
+position = Vector2( -849.6, -267.467 )
+polygon = PoolVector2Array( 1384.53, -251.733, 1856.53, -157.333, 2013.87, -188.8, 2013.87, 503.467, 1919.47, 440.534, 1888, 440.534, 1825.07, 409.067, 1762.13, 314.667, 1667.73, 314.667, 1604.8, 283.2, 1667.73, 220.267, 1510.4, 220.267, 1447.47, 125.867, 1384.53, 125.867, 1416, 94.4001, 1384.53, 62.9334, 1447.47, -94.3997 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="9" type="Area2D" parent="MAP"]
+visible = false
+collision_layer = 16
+collision_mask = 16
+
+[node name="Collision" type="CollisionPolygon2D" parent="MAP/9"]
+position = Vector2( -849.6, -267.467 )
+polygon = PoolVector2Array( 2013.87, 629.333, 1888, 597.867, 1825.07, 629.333, 1667.73, 377.6, 1510.4, 440.533, 1541.87, 283.2, 1447.47, 251.733, 1447.47, 157.333, 1353.07, 157.333, 1227.2, 283.2, 1258.67, 346.133, 1353.07, 440.533, 1353.07, 534.933, 1321.6, 566.4, 1258.67, 566.4, 1195.73, 534.933, 1164.27, 629.333, 1069.87, 660.8, 1038.4, 723.733, 1164.27, 849.6, 1353.07, 881.067, 1416, 944, 1478.93, 975.467, 1636.27, 849.6, 1699.2, 849.6, 1762.13, 1006.93, 1856.53, 1132.8, 1950.93, 1164.27, 2013.87, 1132.8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="10" type="Area2D" parent="MAP"]
+visible = false
+collision_layer = 16
+collision_mask = 16
+
+[node name="Collision" type="CollisionPolygon2D" parent="MAP/10"]
+position = Vector2( -849.6, -267.467 )
+polygon = PoolVector2Array( 1604.8, 1416, 1604.8, 1258.67, 1510.4, 1164.27, 1447.47, 1164.27, 1416, 1227.2, 1321.6, 1101.33, 1258.67, 1101.33, 1069.87, 944, 975.467, 944, 975.467, 818.133, 912.533, 660.8, 849.6, 660.8, 786.667, 440.533, 629.333, 409.067, 503.467, 534.933, 566.4, 692.267, 692.267, 849.6, 755.2, 849.6, 849.6, 975.467, 912.533, 975.467, 912.533, 1101.33, 944, 1164.27, 912.533, 1195.73, 818.133, 1132.8, 755.2, 944, 692.267, 1006.93, 692.267, 1258.67, 755.2, 1353.07, 944, 1416 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="11" type="Area2D" parent="MAP"]
+visible = false
+collision_layer = 16
+collision_mask = 16
+
+[node name="Collision" type="CollisionPolygon2D" parent="MAP/11"]
+position = Vector2( -849.6, -267.467 )
+polygon = PoolVector2Array( 188.8, -188.8, 377.6, -188.8, 534.933, -125.867, 503.467, -62.9332, 409.067, 188.8, 503.467, 503.467, 346.133, 597.867, 251.733, 472, 125.867, 755.2, 62.9335, 786.667, -31.4666, 723.733, -62.9332, 597.867, -314.667, 409.067, -314.667, 94.4001, 62.9335, 409.067, 188.8, 251.733 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="12" type="Area2D" parent="MAP"]
+visible = false
+collision_layer = 16
+collision_mask = 16
+
+[node name="Collision" type="CollisionPolygon2D" parent="MAP/12"]
+position = Vector2( -849.6, -267.467 )
+polygon = PoolVector2Array( -314.667, 409.067, -314.667, 1416, 944, 1416, 755.2, 1353.07, 692.267, 1258.67, 692.267, 1006.93, 755.2, 944, 818.133, 1132.8, 912.533, 1195.73, 944, 1164.27, 912.533, 1101.33, 912.533, 975.467, 849.6, 975.467, 755.2, 849.6, 692.267, 849.6, 566.4, 692.267, 503.467, 534.933, 629.333, 409.067, 734.721, 430.144, 786.667, 440.533, 849.6, 660.8, 912.533, 660.8, 975.467, 818.133, 975.467, 944, 1069.87, 944, 1258.67, 1101.33, 1321.6, 1101.33, 1416, 1227.2, 1447.47, 1164.27, 1510.4, 1164.27, 1604.8, 1258.67, 1604.8, 1416, 2013.87, 1416, 2013.87, 1132.8, 1950.93, 1164.27, 1856.53, 1132.8, 1762.13, 1006.93, 1699.2, 849.6, 1636.27, 849.6, 1478.93, 975.467, 1416, 944, 1353.07, 881.067, 1164.27, 849.6, 1038.4, 723.733, 1069.87, 660.8, 1164.27, 629.333, 1195.73, 534.933, 1258.67, 566.4, 1321.6, 566.4, 1353.07, 534.933, 1353.07, 440.533, 1258.67, 346.133, 1227.2, 283.2, 1353.07, 157.333, 1447.47, 157.333, 1447.47, 251.733, 1541.87, 283.2, 1510.4, 440.533, 1667.73, 377.6, 1825.07, 629.333, 1888, 597.867, 1919.47, 597.867, 2013.87, 629.333, 2013.87, 503.467, 1919.47, 440.533, 1888, 440.533, 1825.07, 409.067, 1762.13, 314.667, 1667.73, 314.667, 1604.8, 283.2, 1667.73, 220.267, 1510.4, 220.267, 1447.47, 125.867, 1382.81, 125.867, 1416, 94.4003, 1384.53, 62.9337, 1195.73, 125.867, 1227.2, 62.9337, 1164.27, 0.000305176, 1258.67, -62.9332, 1195.73, -94.3997, 1164.27, -62.9332, 1069.87, -62.933, 1038.4, -31.4663, 1101.33, 0.000305176, 1101.33, 94.4003, 1038.4, 94.4001, 881.067, 31.467, 818.133, -62.933, 566.4, -188.8, 503.467, -62.933, 409.067, 188.8, 503.467, 503.467, 346.133, 597.867, 251.733, 472, 125.867, 755.2, 62.9335, 786.667, -31.4666, 723.733, -62.9332, 597.867 )
+
+[node name="CursorWatchdog" type="Area2D" parent="."]
+visible = false
+position = Vector2( 432.133, 302.076 )
+scale = Vector2( 0.254237, 0.254237 )
+collision_layer = 16
+collision_mask = 16
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CursorWatchdog"]
+shape = SubResource( 1 )
+
+[connection signal="gui_input" from="." to="." method="_on_Map_gui_input"]
+[connection signal="mouse_exited" from="." to="." method="_on_Map_mouse_exited"]
+[connection signal="resized" from="." to="." method="_on_Map_resized"]
+[connection signal="area_entered" from="CursorWatchdog" to="." method="_on_CursorWatchdog_area_entered"]

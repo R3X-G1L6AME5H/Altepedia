@@ -1,0 +1,97 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Icons/GraphBase.svg" type="Texture" id=1]
+[ext_resource path="res://Assets/Icons/GraphGrid.svg" type="Texture" id=2]
+[ext_resource path="res://Scripts/Graph.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Icons/GraphLables.svg" type="Texture" id=4]
+
+[node name="RadarChart" type="Control"]
+margin_right = 8.0
+margin_bottom = 8.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Graph" type="Node2D" parent="."]
+scale = Vector2( 0.025, 0.025 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Base" type="Sprite" parent="Graph"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 160, 160 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, 4 )
+
+[node name="Grid" type="Sprite" parent="Graph"]
+modulate = Color( 255, 255, 255, 1 )
+position = Vector2( 160, 160 )
+texture = ExtResource( 2 )
+offset = Vector2( 0, 4 )
+
+[node name="Lables" type="Sprite" parent="Graph"]
+modulate = Color( 255, 255, 255, 1 )
+position = Vector2( 160, 160 )
+texture = ExtResource( 4 )
+offset = Vector2( 0, 4 )
+
+[node name="Area" type="Polygon2D" parent="Graph"]
+position = Vector2( 160, 160 )
+color = Color( 0, 255, 0, 0.5 )
+polygon = PoolVector2Array( 26.9901, 46.8056, 89.9093, 0.385004, 53.7532, -93.4998, -17.864, -31.1131, -89.8417, 0.0450046, -27.0031, 46.746 )
+
+[node name="Border" type="Line2D" parent="Graph"]
+position = Vector2( 160, 160 )
+points = PoolVector2Array( 26.9901, 46.8056, 89.9093, 0.385004, 53.7532, -93.4998, -17.864, -31.1131, -89.8417, 0.0450046, -27.0031, 46.746, 26.9901, 46.8056 )
+width = 5.0
+default_color = Color( 0, 255, 0, 1 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="S1" type="Position2D" parent="Graph"]
+visible = false
+position = Vector2( 212.022, 244.933 )
+__meta__ = {
+"_gizmo_extents_": 5.0
+}
+
+[node name="S2" type="Position2D" parent="Graph"]
+visible = false
+position = Vector2( 263.77, 154.84 )
+__meta__ = {
+"_gizmo_extents_": 5.0
+}
+
+[node name="S3" type="Position2D" parent="Graph"]
+visible = false
+position = Vector2( 212.872, 65.6572 )
+__meta__ = {
+"_gizmo_extents_": 5.0
+}
+
+[node name="S4" type="Position2D" parent="Graph"]
+visible = false
+position = Vector2( 108.448, 64.3582 )
+__meta__ = {
+"_gizmo_extents_": 5.0
+}
+
+[node name="S5" type="Position2D" parent="Graph"]
+visible = false
+position = Vector2( 56.3422, 154.364 )
+__meta__ = {
+"_gizmo_extents_": 5.0
+}
+
+[node name="S6" type="Position2D" parent="Graph"]
+visible = false
+position = Vector2( 108.708, 244.794 )
+__meta__ = {
+"_gizmo_extents_": 5.0
+}
+
+[connection signal="resized" from="." to="." method="_on_RadarChart_resized"]
